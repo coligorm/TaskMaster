@@ -40,13 +40,13 @@ A Single Tasks table with:
 
 ## Implementation
 
-### **Phase 1 - Backend Development (C#/.NET)**
+### **Phase 1 - Backend Development (C#/.NET)** :white_check_mark:
 
-   - [ ] Set up a minimal ASP.NET Core Web API project
-   - [ ] Create the Task model and DbContext
-   - [ ] Implement the TasksController with basic CRUD operations
-   - [ ] Test with Postman
-   - [ ] Test all endpoints
+   - [X] Set up a minimal ASP.NET Core Web API project
+   - [X] Create the Task model and DbContext
+   - [X] Implement the TasksController with basic CRUD operations
+   - [X] Test with Postman
+   - [X] Test all endpoints
 
 ### **Phase 2 - Frontend Development (React/TypeScript)**
 
