@@ -48,13 +48,13 @@ A Single Tasks table with:
    - [X] Test with Postman
    - [X] Test all endpoints
 
-### **Phase 2 - Frontend Development (React/TypeScript)**
+### **Phase 2 - Frontend Development (React/TypeScript)** :white_check_mark:
 
-   - [ ] Set up a React project with TypeScript
-   - [ ] Create the task list component (TaskList, AddTaskForm)
-   - [ ] Implement API service functions to call your backend
-   - [ ] Build the UI components and connect them to the API
-   - [ ] Add basic styling and ensure responsiveness
+   - [X] Set up a React project with TypeScript
+   - [X] Create the task list component (TaskList, AddTaskForm)
+   - [X] Implement API service functions to call your backend
+   - [X] Build the UI components and connect them to the API
+   - [X] Add basic styling and ensure responsiveness
 
 ### **Phase 3: Integration and Testing**
 
