@@ -56,7 +56,7 @@ if (app.Environment.IsDevelopment())
     }
 }
 
-// Order is important for middleware
+
 app.UseCors("AllowReactApp");
 app.UseHttpsRedirection();
 app.UseAuthorization();
