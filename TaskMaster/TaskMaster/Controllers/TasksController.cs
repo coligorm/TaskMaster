@@ -44,8 +44,11 @@ namespace TaskMaster.Controllers
             // Ensure we're not trying to set the Id manually
             task.Id = 0;
 
-            // Set creation timestamp
+            // Set default values for optional fields
             task.CreatedAt = DateTime.UtcNow;
+            task.DueDate = task.DueDate == default ? DateTime.UtcNow : task.DueDate;
+            task.Priority = task.Priority; // Already defaults to Low (0)
+            task.IsCompleted = task.IsCompleted; // Already defaults to false
 
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
@@ -55,7 +58,7 @@ namespace TaskMaster.Controllers
 
         // PUT: api/Tasks/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTask(int id, Task task)
+        public async Task<ActionResult<Task>> UpdateTask(int id, Task task)
         {
             if (id != task.Id)
             {
@@ -77,6 +80,10 @@ namespace TaskMaster.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                
+                // Fetch and return the updated task
+                var updatedTask = await _context.Tasks.FindAsync(id);
+                return Ok(updatedTask);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -89,8 +96,6 @@ namespace TaskMaster.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
         }
 
         // PATCH: api/Tasks/5/complete

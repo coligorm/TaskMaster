@@ -11,6 +11,10 @@ builder.WebHost.UseUrls("https://localhost:5245");
 // Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddDbContext<TaskDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("TaskManagerConnection")
+    ));
 
 // Register Swagger
 builder.Services.AddSwaggerGen(c =>
@@ -23,18 +27,12 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Add DbContext with SQL Server
-builder.Services.AddDbContext<TaskDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
-
 // Add CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         policy => policy
-            .WithOrigins("https://localhost:3000")
+            .WithOrigins("http://localhost:3000")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials());

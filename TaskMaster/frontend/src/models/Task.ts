@@ -12,7 +12,8 @@ export interface CreateTaskRequest {
     title: string;
     description: string;
     dueDate?: Date;
-    priority: Priority; 
+    priority?: Priority;
+    isCompleted?: boolean;
 }
 
 export enum Priority {

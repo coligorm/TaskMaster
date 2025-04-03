@@ -12,8 +12,8 @@ using TaskMaster.Data;
 namespace TaskMaster.Migrations
 {
     [DbContext(typeof(TaskDbContext))]
-    [Migration("20250401051337_UpdateSeedData")]
-    partial class UpdateSeedData
+    [Migration("20250403062104_InitialSqlMigration")]
+    partial class InitialSqlMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,7 +63,7 @@ namespace TaskMaster.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 4, 1, 5, 13, 36, 523, DateTimeKind.Utc).AddTicks(1907),
+                            CreatedAt = new DateTime(2025, 4, 3, 6, 21, 3, 268, DateTimeKind.Utc).AddTicks(5483),
                             Description = "Set up the initial project structure and dependencies",
                             DueDate = new DateTime(2025, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -73,7 +73,7 @@ namespace TaskMaster.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 4, 1, 5, 13, 36, 523, DateTimeKind.Utc).AddTicks(3509),
+                            CreatedAt = new DateTime(2025, 4, 3, 6, 21, 3, 268, DateTimeKind.Utc).AddTicks(8442),
                             Description = "Create comprehensive test suite for the API",
                             DueDate = new DateTime(2025, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
