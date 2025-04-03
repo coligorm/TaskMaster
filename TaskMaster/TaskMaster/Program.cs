@@ -5,6 +5,9 @@ using TaskMaster.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure HTTPS URLs
+builder.WebHost.UseUrls("https://localhost:5245");
+
 // Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -29,9 +32,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         policy => policy
-            .SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+            .WithOrigins("http://localhost:3000")
             .AllowAnyMethod()
-            .AllowAnyHeader());
+            .AllowAnyHeader()
+            .AllowCredentials());
 });
 
 var app = builder.Build();
@@ -51,6 +55,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowReactApp");
+app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 

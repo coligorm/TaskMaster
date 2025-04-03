@@ -13,12 +13,12 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({ onAdd }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!title.trim()) {
-        alert('Title is required');
-        return;
-    }
+        e.preventDefault();
+        
+        if (!title.trim()) {
+            alert('Title is required');
+            return;
+        }
 
     const newTask: CreateTaskRequest = {
         title,
@@ -43,11 +43,6 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({ onAdd }) => {
         setIsSubmitting(false);
     }
 };
-
-// const handlePriorityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-//     const value = e.target.value;
-//     setPriority(value === '' ? null : parseInt(value) as Priority);
-// };
 
 return (
     <div className="add-task-form" style={{ marginBottom: '20px' }}>
