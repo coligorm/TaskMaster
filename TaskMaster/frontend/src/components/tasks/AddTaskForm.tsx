@@ -9,7 +9,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({ onAdd }) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [dueDate, setDueDate] = useState('');
-    const [priority, setPriority] = useState('Low');
+    const [priority, setPriority] = useState<Priority>(Priority.Low);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -23,8 +23,8 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({ onAdd }) => {
     const newTask: CreateTaskRequest = {
         title,
         description,
-        ...(dueDate ? { dueDate: new Date(dueDate) } : {}),
-        priority: priority as Priority
+        dueDate: dueDate ? new Date(dueDate + 'T00:00:00') : new Date(), // Use today's date if no date selected
+        priority: priority ?? Priority.Low 
     };
 
     setIsSubmitting(true);
@@ -35,7 +35,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({ onAdd }) => {
         setTitle('');
         setDescription('');
         setDueDate('');
-        setPriority('Low');
+        setPriority(Priority.Low);
     } catch (error) {
         console.error('Failed to add task:', error);
         alert('Failed to add task. Please try again.');
@@ -43,6 +43,11 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({ onAdd }) => {
         setIsSubmitting(false);
     }
 };
+
+// const handlePriorityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+//     const value = e.target.value;
+//     setPriority(value === '' ? null : parseInt(value) as Priority);
+// };
 
 return (
     <div className="add-task-form" style={{ marginBottom: '20px' }}>
@@ -80,6 +85,20 @@ return (
                 onChange={(e) => setDueDate(e.target.value)}
                 style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
             />
+        </div>
+
+        <div>
+            <label htmlFor="edit-priority" style={{ display: 'block', marginBottom: '5px' }}>Priority</label>
+            <select
+                id="edit-priority"
+                value={priority}
+                onChange={(e) => setPriority(Number(e.target.value) as unknown as Priority)}
+                style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+            >
+                <option value={Priority.Low}>Low</option>
+                <option value={Priority.Medium}>Medium</option>
+                <option value={Priority.High}>High</option>
+            </select>
         </div>
         
         <button 
