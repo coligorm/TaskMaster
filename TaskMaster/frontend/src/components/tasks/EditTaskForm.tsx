@@ -43,13 +43,15 @@ const EditTaskForm: React.FC<EditTaskFormProps> = ({ task, onUpdate, onCancel })
             return;
         }
 
+        // Create a copy of the original task and update only the modified fields
         const updatedTask: Task = {
-            ...task,
-            title,
-            description,
-            isCompleted,
-            priority,
-            ...(dueDate ? { dueDate: new Date(dueDate) } : {})
+            id: task.id,
+            title: title.trim(),
+            description: description.trim(),
+            dueDate: dueDate ? new Date(dueDate) : task.dueDate,
+            isCompleted: isCompleted,
+            priority: priority,
+            createdAt: task.createdAt
         };
 
         setIsSubmitting(true);
@@ -116,7 +118,7 @@ const EditTaskForm: React.FC<EditTaskFormProps> = ({ task, onUpdate, onCancel })
             <select
                 id="edit-priority"
                 value={priority}
-                onChange={(e) => setPriority(e.target.value as Priority)}
+                onChange={(e) => setPriority(Number(e.target.value) as unknown as Priority)}
                 style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
             >
                 <option value={Priority.Low}>Low</option>

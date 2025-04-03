@@ -34,6 +34,10 @@ createTask: async (task: CreateTaskRequest): Promise<Task> => {
   // Update a task
 updateTask: async (id: number, task: Task): Promise<Task> => {
     const response = await apiClient.put<Task>(`/tasks/${id}`, task);
+    // If server returns 204 No Content, return the task that was sent
+    if (response.status === 204) {
+        return task;
+    }
     return response.data;
 },
 

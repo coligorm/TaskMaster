@@ -2,7 +2,7 @@ export interface Task {
     id: number;
     title: string;
     description: string;
-    dueDate?: Date;
+    dueDate: Date;
     isCompleted: boolean;
     priority: Priority;
     createdAt: Date;
@@ -16,7 +16,7 @@ export interface CreateTaskRequest {
 }
 
 export enum Priority {
-    Low = "Low",
-    Medium = "Medium",
-    High = "High"
+    Low = 0,
+    Medium = 1,
+    High = 2
 }
