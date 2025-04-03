@@ -56,10 +56,21 @@ const TaskList: React.FC = () => {
 
     const handleToggleComplete = async (id: number) => {
         try {
-            const updatedTask = await TaskService.toggleTaskCompletion(id);
+            const taskToUpdate = tasks.find(t => t.id === id);
+            if (!taskToUpdate) {
+                throw new Error('Task not found');
+            }
+
+            const updatedTask = {
+                ...taskToUpdate,
+                isCompleted: !taskToUpdate.isCompleted
+            };
+
+            const result = await TaskService.updateTask(id, updatedTask);
+            
             setTasks(prevTasks => 
                 prevTasks.map(task => 
-                task.id === id ? updatedTask : task
+                    task.id === id ? result : task
                 )
             );
         } catch (err) {
@@ -71,14 +82,18 @@ const TaskList: React.FC = () => {
     const handleUpdateTask = async (id: number, updatedTask: Task) => {
         try {
             const result = await TaskService.updateTask(id, updatedTask);
+            
+            // Update the tasks state with the result
             setTasks(prevTasks => 
                 prevTasks.map(task => 
                     task.id === id ? result : task
                 )
             );
+            setEditingTask(null);
         } catch (err) {
             console.error('Error updating task:', err);
-            throw err; // Let the form handle the error
+            alert('Failed to update task. Please check the console for details.');
+            throw err;
         }
     };
 
