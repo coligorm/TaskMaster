@@ -40,7 +40,7 @@ A Single Tasks table with:
 
 ## Implementation - Iteration 1
 
-### **Phase 1 - Backend Development (C#/.NET)**
+### **Phase 1 - Backend Development (C#/.NET)** :heavy_check_mark:
 
    - [X] Set up a minimal ASP.NET Core Web API project
    - [X] Create the Task model and DbContext
@@ -48,7 +48,7 @@ A Single Tasks table with:
    - [X] Test with Swagger
    - [X] Test all endpoints
 
-### **Phase 2 - Frontend Development (React/TypeScript)**
+### **Phase 2 - Frontend Development (React/TypeScript)** :heavy_check_mark:
 
    - [X] Set up a React project with TypeScript
    - [X] Create the task list component (TaskList, AddTaskForm)
@@ -56,7 +56,7 @@ A Single Tasks table with:
    - [X] Build the UI components and connect them to the API
    - [X] Add basic styling and ensure responsiveness
 
-### **Phase 3: Integration and Testing**
+### **Phase 3: Integration and Testing** 
 
   - [X] Test the full application flow
   - [X] Fix any bugs or issues
@@ -64,11 +64,11 @@ A Single Tasks table with:
 
 ## Implementation - Iteration 2
 
-### Phase 4 - Integration SQL Database
+### Phase 4 - Integration SQL Database :heavy_check_mark:
 
-   - [ ] Configure the connection string
-   - [ ] Update your DbContext configuration
-   - [ ] Run migrations to create the database schema
+   - [X] Configure the connection string
+   - [X] Update your DbContext configuration
+   - [X] Run migrations to create the database schema
 
 ### Phase 5 - Adding Azure Features
 
