@@ -38,7 +38,7 @@ A Single Tasks table with:
 
 
 
-## Implementation
+## Implementation - Iteration 1
 
 ### **Phase 1 - Backend Development (C#/.NET)**
 
@@ -61,3 +61,65 @@ A Single Tasks table with:
   - [X] Test the full application flow
   - [X] Fix any bugs or issues
   - [ ] Add any finishing touches to make little Alex Horne proud
+
+## Implementation - Iteration 2
+
+### Phase 4 - Integration SQL Database
+
+   - [ ] Configure the connection string
+   - [ ] Update your DbContext configuration
+   - [ ] Run migrations to create the database schema
+
+### Phase 5 - Adding Azure Features
+
+#### 5.1 Migrating to Azure SQL Database
+
+   - [ ] Create an Azure SQL Database
+   - [ ] Migrate Schema and Data
+   - [ ] Update Connection Strings
+   - [ ] Implement Azure Key Vault 
+
+#### 5.2 Deploying the Backend to Azure App Service
+
+   - [ ] Create an App Service
+   - [ ] Prepare Application
+   - [ ] Deploy Backend
+   - [ ] Configure Application Settings
+
+#### 5.3 Deploying the Frontend to Azure App Service
+
+   - [ ] Configure for Deployment
+   - [ ] Deploy Your Frontend
+   - [ ] API Configuration
+
+#### 5.4 Implementing Azure Functions for Reminders
+
+   - [ ] Create an Azure Function App
+   - [ ] Create a Timer-Triggered Function
+   - [ ] Implement the Reminder Logic
+   - [ ] Add Email Service Integration
+   - [ ] Connect to Azure SQL Database
+
+#### 5.5 Setting Up Application Insights
+
+   - [ ] Create an Application Insights Resource
+   - [ ] Add to Backend
+   - [ ] Add to Frontend 
+
+#### 5.6 Additional Azure Integrations
+
+##### 5.6.1 Azure Active Directory B2C for Authentication
+
+   - [ ] Set Up Azure AD B2C
+   - [ ] Integrate with Backend
+   - [ ] Integrate with Frontend
+
+##### 5.6.2 Azure Storage for File Attachments
+
+   - [ ] Create a Storage Account
+   - [ ] Add to Backend
+   - [ ] Add to Frontend
+
+#### 5.5 CI/CD Pipeline Setup
+
+   - [ ] Create a GitHub Actions Workflow
