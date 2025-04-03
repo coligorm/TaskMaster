@@ -56,7 +56,6 @@ if (app.Environment.IsDevelopment())
     }
 }
 
-
 app.UseCors("AllowReactApp");
 app.UseHttpsRedirection();
 app.UseAuthorization();
