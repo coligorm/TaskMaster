@@ -42,22 +42,22 @@ A Single Tasks table with:
 
 ### **Phase 1 - Backend Development (C#/.NET)**
 
-   - [ ] Set up a minimal ASP.NET Core Web API project
-   - [ ] Create the Task model and DbContext
-   - [ ] Implement the TasksController with basic CRUD operations
-   - [ ] Test with Postman
-   - [ ] Test all endpoints
+   - [X] Set up a minimal ASP.NET Core Web API project
+   - [X] Create the Task model and DbContext
+   - [X] Implement the TasksController with basic CRUD operations
+   - [X] Test with Swagger
+   - [X] Test all endpoints
 
 ### **Phase 2 - Frontend Development (React/TypeScript)**
 
-   - [ ] Set up a React project with TypeScript
-   - [ ] Create the task list component (TaskList, AddTaskForm)
-   - [ ] Implement API service functions to call your backend
-   - [ ] Build the UI components and connect them to the API
-   - [ ] Add basic styling and ensure responsiveness
+   - [X] Set up a React project with TypeScript
+   - [X] Create the task list component (TaskList, AddTaskForm)
+   - [X] Implement API service functions to call your backend
+   - [X] Build the UI components and connect them to the API
+   - [X] Add basic styling and ensure responsiveness
 
 ### **Phase 3: Integration and Testing**
 
-  - [ ] Test the full application flow
-  - [ ] Fix any bugs or issues
+  - [X] Test the full application flow
+  - [X] Fix any bugs or issues
   - [ ] Add any finishing touches to make little Alex Horne proud
