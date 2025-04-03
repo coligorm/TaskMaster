@@ -116,7 +116,7 @@ const EditTaskForm: React.FC<EditTaskFormProps> = ({ task, onUpdate, onCancel })
             <select
                 id="edit-priority"
                 value={priority}
-                onChange={(e) => setPriority(e.target.value as Priority)}
+                onChange={(e) => setPriority(Number(e.target.value) as unknown as Priority)}
                 style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
             >
                 <option value={Priority.Low}>Low</option>
