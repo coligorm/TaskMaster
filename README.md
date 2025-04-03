@@ -120,6 +120,6 @@ A Single Tasks table with:
    - [ ] Add to Backend
    - [ ] Add to Frontend
 
-#### 5.5 CI/CD Pipeline Setup
+#### 5.7 CI/CD Pipeline Setup
 
    - [ ] Create a GitHub Actions Workflow
